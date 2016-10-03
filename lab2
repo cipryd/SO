@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if test $# -lt 2
+then echo $0 "Usage <file> <n1> <n2>"
+else
+shift
+count=0
+sum=0
+for x
+do
+  nr=`expr $x % 2`
+  if test $nr -eq 1
+  then
+    count=`expr $count + 1`
+  fi
+  sum=`expr $sum + $x`
+done
+echo "nr impare:" $count
+echo "suma:" $sum
+echo  $sum | wc -L
+if test -f $0  && ! test -L $0
+then echo "regular file"
+fi
+fi
