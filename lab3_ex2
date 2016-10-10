@@ -19,7 +19,9 @@ else
 	    then
 	      output=`bash $0 $1 $i`
 	      count=`expr count + output`
+	      #2 bash $0 $1 $i
+	      #2 count=`expr count + $?`
       fi
   done
-  echo $count
+  echo $count #2 exit $count
 fi
