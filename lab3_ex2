@@ -17,7 +17,7 @@ else
 	    echo $i >> $1
 	  elif test -d $i
 	    then
-	      output=echo bash $0 $1 $i
+	      output=`bash $0 $1 $i`
 	      count=`expr count + output`
       fi
   done
