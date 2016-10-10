@@ -1,0 +1,25 @@
+#!/bin/bash
+
+count=0
+
+if test $# -lt 2
+then 
+  echo "Usage: bash $0 file dir"
+else
+  for i in "$2"/*
+  do
+      echo $i
+      if test -L $i
+      then
+	count=`expr $count + 1`
+      elif test -f $i
+	  then 
+	    echo $i >> $1
+	  elif test -d $i
+	    then
+	      output=echo bash $0 $1 $i
+	      count=`expr count + output`
+      fi
+  done
+  echo $count
+fi
