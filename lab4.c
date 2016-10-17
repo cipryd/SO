@@ -7,6 +7,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/*
+
+./lab4 file path
+
+make a new file in the given path that contains only even nr
+
+*/
+
+
 int main(int argc, char *argv[]){
   
   
